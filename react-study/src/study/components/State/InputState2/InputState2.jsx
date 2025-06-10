@@ -22,6 +22,7 @@ export default function InputState2() {
 
   return (
     <div>
+
       <input
         name="t1"
         type="text"

@@ -4,6 +4,7 @@ import styled from "styled-components";
 const InputBox = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 function InputState3() {
@@ -26,6 +27,7 @@ function InputState3() {
 
   const handleOnClick = () => {
     setChecked((prev) => ({ ...studentInputValue }));
+    setStudentInputValue(studentInputValueEmpty);
   };
 
   const { name, age, address } = checked;
