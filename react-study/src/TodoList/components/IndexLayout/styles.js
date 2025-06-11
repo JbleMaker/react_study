@@ -1,0 +1,11 @@
+import { css } from "styled-components";
+
+export const layout = css`
+  box-sizing: border-box;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px;
+  height: 600px;
+  background-color: #fafafa;
+`;
