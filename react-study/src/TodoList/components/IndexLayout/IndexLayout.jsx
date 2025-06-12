@@ -2,10 +2,21 @@
 import IndexHeader from "../IndexHeader/IndexHeader";
 import * as s from "./styles";
 
-function IndexLayout({ children }) {
+function IndexLayout({
+  filter,
+  setFilter,
+  searchText,
+  setSearchText,
+  children,
+}) {
   return (
     <div css={s.layout}>
-      <IndexHeader />
+      <IndexHeader
+        filter={filter}
+        setFilter={setFilter}
+        searchText={searchText}
+        setSearchText={setSearchText}
+      />
       {children}
     </div>
   );
