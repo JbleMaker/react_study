@@ -1,5 +1,4 @@
 import { css } from "styled-components";
-import App from "./../../../App";
 
 export const container = css`
   display: flex;
@@ -82,7 +81,7 @@ export const hiddenTrashBox = css`
   }
 `;
 
-export const TrachBox = css`
+export const TrashBox = css`
   position: absolute;
   top: 0;
   right: -36px;

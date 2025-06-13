@@ -1,5 +1,5 @@
 /**@jsxImportSource @emotion/react */
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import * as s from "./styles";
 import { IoTrash } from "react-icons/io5";
 
@@ -16,6 +16,7 @@ function IndexMain({ setTodoList, todoList }) {
       return;
     }
     // console.log("todo insert");
+
     setTodoList((prev) => {
       const lastId = prev.length === 0 ? 0 : prev[prev.length - 1].id;
       const newTodo = {
@@ -73,7 +74,7 @@ function IndexMain({ setTodoList, todoList }) {
               </div>
               <div css={s.hiddenTrashBox}>
                 <div
-                  css={s.TrachBox}
+                  css={s.TrashBox}
                   onClick={() => handleDeleteOnClick(todo.id)}
                 >
                   <IoTrash />
