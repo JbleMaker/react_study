@@ -33,7 +33,7 @@ function Router3(props) {
     console.log("queryParams");
     console.log(decodeURI(location.search));
   }, [location.search]);
-
+  
   useEffect(() => {
     console.log(location.state);
   }, [location.state]);
