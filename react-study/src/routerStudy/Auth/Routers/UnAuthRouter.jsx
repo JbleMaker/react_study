@@ -1,6 +1,5 @@
 /**@jsxImportSource @emotion/react */
 
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Signin from "../Signin/Signin";
 import Signup from "../Signup/Signup";

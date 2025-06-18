@@ -181,13 +181,13 @@ function Signin(props) {
 
   const handleRegisterOnClick = async () => {
     // db 연결 및 데이터 push
-    const url = "http://localhost:8080/api/users";
-    let data = {
-      username: "TEST",
-      password: "1234",
-      fullName: "1234",
-      email: "jbojsun@naver.com",
-    };
+    const url = "http://localhost:8080/api/users/login";
+
+    // 컨트롤러 메소드명 Login
+    // Dto명  LoginDto
+    // POST 요청
+
+    let data = {};
 
     inputItems.forEach((inputItem) => {
       //input값을 가지고와서 해당 data에 각각 저장
@@ -199,9 +199,9 @@ function Signin(props) {
 
     try {
       await axios.post(url, data);
-      alert("사용자 등록 완료");
+      alert("로그인 요청 완료");
     } catch {
-      alert("사용자 등록 실패");
+      alert("로그인 요청 실패");
     }
   };
 
