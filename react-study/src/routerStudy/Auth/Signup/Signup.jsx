@@ -205,7 +205,7 @@ function Signup(props) {
 
   const handleRegisterOnClick = async () => {
     // db 연결 및 데이터 push
-    const url = "http://localhost:8080/api/members";
+    const url = "http://localhost:8080/api/signup";
     let data = {
       username: "TEST",
       password: "1234",

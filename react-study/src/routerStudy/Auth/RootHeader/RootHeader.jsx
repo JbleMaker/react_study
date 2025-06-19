@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import * as s from "./styles";
 import { LuUser, LuUserPlus, LuLogOut } from "react-icons/lu";
 import React, { useState } from "react";
+import { useLogin } from "../stores/storeStudy";
 
 function RootHeader() {
-  const [isLogin, setIsLogin] = useState(false);
+  const { isLogin } = useLogin();
   return (
     <header css={s.layout}>
       <h1>
@@ -19,7 +20,7 @@ function RootHeader() {
             </Link>
           </li>
           <li>
-            <Link to={"/auth/logout"}>
+            <Link to={"/auth/logout"} >
               <LuLogOut />
             </Link>
           </li>
