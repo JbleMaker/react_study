@@ -6,6 +6,7 @@ import { IoEye, IoEyeOff } from "react-icons/io5";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useStore } from "../stores/storeStudy";
+import { useQueryClient } from "@tanstack/react-query";
 
 function useSignInAndUpInput({ id, type, name, placeholder, value, valid }) {
   const STATUS = {
@@ -135,6 +136,7 @@ function InputValidatedMessage({ status, message }) {
 }
 
 function Signin() {
+  const queryClient = useQueryClient();
   const navigate = useNavigate();
   const location = useLocation();
   const { setValue: setRefresh } = useStore();
@@ -206,7 +208,10 @@ function Signin() {
       // console.log("AccessToken", accessToken);
       if (!!accessToken) {
         localStorage.setItem("AccessToken", accessToken);
-        setRefresh((prev) => true);
+        queryClient.invalidateQueries({
+          //강제로 쿼리를 지울경우, 쿼리를 새로 가지러 감.
+          queryKey: ["principalUserQuery"],
+        });
         navigate("/");
       }
     } catch (error) {

@@ -12,14 +12,13 @@ import { useGlobalStateStore, useLogin, useStore } from "../stores/storeStudy";
 /**
  * 전역 상태 관리
  * 1. 클라이언트 전역상태 (Zustand, recoil => react19에서 지원x)
- * 2. 서버 전역 상태 ( react-query)
+ * 2. 서버 전역 상태 (react-query)
  */
 
 function MainRouter(props) {
   // const [isLogin, setLogin] = useState(false);
   const { isLogin, setLogin } = useLogin();
   const { value: isRefresh, setValue: setRefresh } = useStore();
-  const { name, setName, setName2 } = useGlobalStateStore();
 
   useEffect(() => {
     if (isRefresh) {
