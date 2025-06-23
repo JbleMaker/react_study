@@ -205,13 +205,9 @@ function Signup(props) {
 
   const handleRegisterOnClick = async () => {
     // db 연결 및 데이터 push
-    const url = "http://localhost:8080/api/signup";
-    let data = {
-      username: "TEST",
-      password: "1234",
-      fullName: "1234",
-      email: "jbojsun@naver.com",
-    };
+    const url = "http://localhost:8080/api/users";
+
+    let data = {};
 
     inputItems.forEach((inputItem) => {
       //input값을 가지고와서 해당 data에 각각 저장
@@ -234,6 +230,7 @@ function Signup(props) {
       });
     } catch (error) {
       alert("사용자 등록 실패");
+      console.log(error);
     }
   };
 

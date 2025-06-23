@@ -216,7 +216,7 @@ function Signin() {
       }
     } catch (error) {
       const { response, status } = error;
-      console.log(response.data, status);
+      // console.log(response.data, status);
       alert("로그인 요청 실패");
     }
   };
