@@ -24,7 +24,6 @@
 8. [상세 담당 업무](#8)
 9. [주요 코드 ](#9)
 10. [트러블 슈팅](#10)
-11. [프로젝트 회고](#11)
 
 <br />
 
@@ -145,33 +144,40 @@ Notion: [CHEERFUL ](https://www.notion.so/list-a/Cheerful-241638f9b91b8024aa31d5
 
 ## <span id="5">❓ 5. 라이브러리 사용 이유</span>
 
-> Emotion 
+> Emotion
+
 - 각 컴포넌트에 스타일이 캡슐화되어 전역스타일 충돌 방지 및 동적 props기반 스타일링 지원으로 상태에 따라 유연한 스타일 변경이 가능하여 사용.
-<br>
+  <br>
 
 > react-google-maps/api
-- 지도, 마커, 인포윈도우 등을 React컴포넌트처럼 관리가 가능하고 필요한 모듈만 불러오는 Tree Shaking지원으로 성능 최적화를 위해 사용.
-<br>
 
-> React-query 
+- 지도, 마커, 인포윈도우 등을 React컴포넌트처럼 관리가 가능하고 필요한 모듈만 불러오는 Tree Shaking지원으로 성능 최적화를 위해 사용.
+  <br>
+
+> React-query
+
 - 캐싱, 자동 리패칭등 데이터 관리 기능 내장 및 useQuery, useMutation 혹을 간단히 API 데이터 호출이 가능하여 사용.
-<br>
+  <br>
 
 > Axios
+
 - 직관적인 API, 요청/응답 인터셉터 지원으로 토큰 기반 인증 처리에 유용하여 사용.
-<br>
+  <br>
 
 > react-icons
+
 - FontAwesome, Materialicons등 통합 ICON 제공등 편의성을 위해 사용
-<br>
+  <br>
 
 > react-router
+
 - 중첩 라우트, 동적 라우트등 강력한 기능 및 선언형 라우팅으로 URL에 따라 컴포넌트를 직관적으로 매핑하기 위해 사용.
-<br>
+  <br>
 
 > zustand
+
 - 가볍고 직관적인 전역 상태 관리를 위해 사용.
-<br>
+  <br>
 
 <!-- Top Button -->
 <p style='background: black; width: 32px; height: 32px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-left: auto;'><a href="#top" style='color: white; '>▲</a></p>
@@ -824,28 +830,6 @@ public String profile(String path) {
 
 </div>
 </details>
-
-<br>
-
-<!-- Top Button -->
-<p style='background: black; width: 32px; height: 32px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-left: auto;'><a href="#top" style='color: white; '>▲</a></p>
-
-<br>
-
-## <span id="12">12. 🛠️ 시작 가이드</span>
-
-### Installation
-
-```shell
-# 1. 클론하기
-$ git clone https://github.com/cheerful-site/cheerful.git .
-
-# 2. 의존성 설치하기
-$ npm install
-
-# 3. 개발 서버 실행하기
-$ npm run dev
-```
 
 <br>
 
