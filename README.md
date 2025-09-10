@@ -30,7 +30,7 @@
 
 ## <span id="1">🚩 1. 프로젝트 소개</span>
 
-Notion: [프로젝트 노션 링크](https://www.notion.so/list-a/Cheerful-241638f9b91b8024aa31d52fc9c1c53a)
+Notion: [CHEERFUL ](https://www.notion.so/list-a/Cheerful-241638f9b91b8024aa31d52fc9c1c53a)
 
 - 내 위치 근처의 모든 응급병원, 반려동물 동반 카페, 유기동물 보호소를 보여주기 때문에 검색할 필요 없이 편리함
 - ui 간소화 및 해당 아이콘 구별을 하여 직관적이게 표현
@@ -48,7 +48,7 @@ Notion: [프로젝트 노션 링크](https://www.notion.so/list-a/Cheerful-24163
 
 | <img src="teamImage/54e2279a9e28112a.png" width="300px"/> | <img src="teamImage/25cd1da43657c32a.png" width="300px"/> | <img src="teamImage/4134833ad5f3eb68.png" width="300px"/> |
 | :-------------------------------------------------------: | :-------------------------------------------------------: | :-------------------------------------------------------: |
-|         [노소정](https://github.com/팀원1아이디)          |         [김종보](https://github.com/팀원2아이디)          |         [강미경](https://github.com/팀원3아이디)          |
+|          [노소정](https://github.com/sojeong132)          |          [김종보](https://github.com/JbleMaker)           |         [강미경](https://github.com/Mi-Kyung331)          |
 |                  **Back-end (DB 관리)**                   |                    **Front-end 개발**                     |              **Back-end (Web Site Design)**               |
 
 </div>
@@ -64,7 +64,7 @@ Notion: [프로젝트 노션 링크](https://www.notion.so/list-a/Cheerful-24163
 
 > 프로젝트 개발 기간: 2025.08.01 - 2025.09.12
 
-<img width="700" height="400" alt="Image" src="cheerfulGif/PPT_14.png" />
+<img width="100%" alt="Image" src="cheerfulGif/PPT_14.png" />
 
 <br>
 
@@ -75,17 +75,22 @@ Notion: [프로젝트 노션 링크](https://www.notion.so/list-a/Cheerful-24163
 
 ## <span id="4">📚 4. 기술 스택</span>
 
-### Environment
+### 🛠 Environment
 
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-000000.svg?style=for-the-badge&logo=intellijidea&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=github&logoColor=white)
 
-### Config
+---
 
-![NPM](https://img.shields.io/badge/npm-%25232C8EBB.svg?style=for-the-badge&logo=npm&logoColor=white)
+### ⚙️ Config & Package Manager
 
-### Development
+![NPM](https://img.shields.io/badge/NPM-CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
 
-### Frontend Stacks
+---
+
+### 💻 Frontend
 
 ![React](https://img.shields.io/badge/React-v19.1.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![emotion](https://img.shields.io/badge/emotion-v11.14.0-DB7093?style=for-the-badge&logo=emotion&logoColor=white)
@@ -98,7 +103,9 @@ Notion: [프로젝트 노션 링크](https://www.notion.so/list-a/Cheerful-24163
 ![React Router](https://img.shields.io/badge/React--Router--Dom-v7.7.1-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)
 ![Zustand](https://img.shields.io/badge/Zustand-v5.0.7-FFCA28?style=for-the-badge&logo=zustand&logoColor=black)
 
-### Backend & Database
+---
+
+### 🖥 Backend & Database
 
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-v21-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
 ![MyBatis](https://img.shields.io/badge/MyBatis-latest-FF5722?style=for-the-badge&logo=databricks&logoColor=white)
@@ -106,18 +113,25 @@ Notion: [프로젝트 노션 링크](https://www.notion.so/list-a/Cheerful-24163
 ![OAuth2](https://img.shields.io/badge/OAuth2-latest-3D9BCD?style=for-the-badge&logo=oauth&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
-### Project Management
+---
 
-![GitHub Issues](https://img.shields.io/badge/GitHub%20Issues-100000?style=for-the-badge&logo=github&logoColor=white)
+### 📌 Project Management
+
+![GitHub Issues](https://img.shields.io/badge/GitHub%20Issues-181717?style=for-the-badge&logo=github&logoColor=white)
 ![GitHub Pull Requests](https://img.shields.io/badge/GitHub%20PRs-2088FF?style=for-the-badge&logo=github&logoColor=white)
 
-### Design
+---
 
-![Figma](https://img.shields.io/badge/Figma-Design%20Tool-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+### 🎨 Design
 
-### Communication
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 
-![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)![Discord](https://img.shields.io/badge/Discord-2D8CFF?style=for-the-badge&logo=Discord&logoColor=white)
+---
+
+### 💬 Communication
+
+![Notion](https://img.shields.io/badge/Notion-000000.svg?style=for-the-badge&logo=notion&logoColor=white)
+![Discord](https://img.shields.io/badge/Discord-5865F2.svg?style=for-the-badge&logo=discord&logoColor=white)
 
 <br>
 
@@ -272,15 +286,15 @@ Notion: [프로젝트 노션 링크](https://www.notion.so/list-a/Cheerful-24163
 
 #### 홈 화면
 
-<img src="./cheerfulGif/cheerful_home_gif.gif" width="600px">
+<img src="./cheerfulGif/cheerful_home_gif.gif" width="100%">
 
 #### 마이페이지 화면
 
-<img src="./cheerfulGif/cheerful_mypage_gif.gif" width="600px">
+<img src="./cheerfulGif/cheerful_mypage_gif.gif" width="100%">
 
 #### 관리자 페이지
 
-<img src="./cheerfulGif/cheerful_adminpage_gif.gif" width="600px">
+<img src="./cheerfulGif/cheerful_adminpage_gif.gif" width="100%">
 
 ---
 
@@ -288,11 +302,11 @@ Notion: [프로젝트 노션 링크](https://www.notion.so/list-a/Cheerful-24163
 
 #### 커뮤니티 메인 화면
 
-<img src="./cheerfulGif/cheerful_community_gif.gif" width="600px" >
+<img src="./cheerfulGif/cheerful_community_gif.gif" width="100%" >
 
 #### 게시물 상세/댓글
 
-<img src="./cheerfulGif/cheerful_community_comment_gif.gif" width="600px">
+<img src="./cheerfulGif/cheerful_community_comment_gif.gif" width="100%">
 
 ---
 
@@ -300,11 +314,11 @@ Notion: [프로젝트 노션 링크](https://www.notion.so/list-a/Cheerful-24163
 
 #### 푸드 메인 화면
 
-<img src="./cheerfulGif/cheerful_food_gif.gif" width="600px">
+<img src="./cheerfulGif/cheerful_food_gif.gif" width="100%">
 
 #### 상품 상세/댓글
 
-<img src="./cheerfulGif/cheerful_food_comment_gif.gif" width="600px">
+<img src="./cheerfulGif/cheerful_food_comment_gif.gif" width="100%">
 
 ---
 
@@ -312,7 +326,7 @@ Notion: [프로젝트 노션 링크](https://www.notion.so/list-a/Cheerful-24163
 
 #### 지도 화면
 
-<img src="./cheerfulGif/cheerful_map_gif.gif" width="600px">
+<img src="./cheerfulGif/cheerful_map_gif.gif" width="100%">
 
 ---
 
@@ -320,7 +334,7 @@ Notion: [프로젝트 노션 링크](https://www.notion.so/list-a/Cheerful-24163
 
 #### 로딩 화면
 
-<img src="./cheerfulGif/cheerful_loading_gif.gif" width="600px">
+<img src="./cheerfulGif/cheerful_loading_gif.gif" width="100%">
 
 <!-- Top Button -->
 <p style='background: black; width: 32px; height: 32px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-left: auto;'><a href="#top" style='color: white; '>▲</a></p>
@@ -494,6 +508,94 @@ function DataTable({
 ```
 
 <br />
+
+</div>
+</details>
+
+<details>
+<summary> 이미지 URL 반환</summary>
+
+<div>
+
+1. 문제 상황
+   기존 코드는 imgPath에 단순 경로를 저장하기 때문에 이미지 업로드와 DB 저장이 분리되지 않았고, URL 가공/변환 과정이 없어 프론트로 이미지 경로를 보냈을 때 가공이 필요했음. 하지만 해당 코드로 유지보수를 하게 되자 백앤드에서 프론트로 이미지 경로를 보내줄 때 프론트에서 별다른 가공할 필요가 없이 이미지 파일을 바로 사용할 수 있게 됨.
+
+```java
+AtomicInteger atomicInteger = new AtomicInteger(0);
+      List<CommunityImg> communityImgs = uploadFilepath.stream()
+              .map(path -> CommunityImg.builder()
+                      .seq(atomicInteger.getAndIncrement() + 1)
+                      .communityId(community.getCommunityId())
+                      .imgPath(path)
+                      .build())
+              .collect(Collectors.toList());
+      communityImgMapper.insertMany(communityImgs);
+
+      if (!uploadFilepath.isEmpty()) {
+          AtomicInteger atomicInteger = new AtomicInteger(0);
+          List<CommunityImg> communityImgs = uploadFilepath.stream()
+                  .map(path -> CommunityImg.builder()
+                          .seq(atomicInteger.getAndIncrement() + 1)
+                          .communityId(community.getCommunityId())
+                          .imgPath(path)
+                          .build())
+                  .collect(Collectors.toList());
+          communityImgMapper.insertMany(communityImgs);
+      }
+
+      System.out.println(uploadFilepath);
+```
+
+<br />
+
+2. 해결방안
+
+```java
+List<MultipartFile> imageFiles = dto.getFiles();
+
+        if (imageFiles != null && !imageFiles.isEmpty()) {
+            List<CommunityImg> communityImgs = new ArrayList<>();
+            int seq = 1;
+
+            for(MultipartFile file : imageFiles) {
+                String imagePath = fileService.uploadFile(file, "community");
+
+                CommunityImg communityImg = CommunityImg.builder()
+                    .communityId(community.getCommunityId())
+                    .seq(seq++)
+                    .imgPath(imagePath)
+                    .build();
+
+                communityImgs.add(communityImg);
+            }
+
+            communityImgMapper.insertMany(communityImgs);
+        }
+
+```
+
+```java
+public String profile(String path) {
+    return buildImageUrl(path, "profile");
+  }
+  public String community(String path) {
+    return buildImageUrl(path, "community");
+  }
+  public String food(String path) {
+    return buildImageUrl(path, "food");
+  }
+  public String foodComment(String path) {
+    return buildImageUrl(path, "foodComment", false);
+  }
+  public String notice(String path) {
+    return buildImageUrl(path, "notice", false);
+  }
+  public String noticeComment(String path) {
+    return buildImageUrl(path, "noticeComment", false);
+  }
+```
+
+   <br />
 
 </div>
 </details>
