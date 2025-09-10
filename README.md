@@ -6,7 +6,7 @@
 
 🔗 [배포 링크](https://cheerfulpet.store)
 
-<img src="" alt="intro title image"/>
+<img src="cheerfulGif/cheerful_cover.png" alt="intro title image"/>
 
 </div>
 
@@ -75,6 +75,7 @@ Notion: [CHEERFUL ](https://www.notion.so/list-a/Cheerful-241638f9b91b8024aa31d5
 
 ## <span id="4">📚 4. 기술 스택</span>
 
+<div align="center">
 ### 🛠 Environment
 
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
@@ -133,6 +134,8 @@ Notion: [CHEERFUL ](https://www.notion.so/list-a/Cheerful-241638f9b91b8024aa31d5
 ![Notion](https://img.shields.io/badge/Notion-000000.svg?style=for-the-badge&logo=notion&logoColor=white)
 ![Discord](https://img.shields.io/badge/Discord-5865F2.svg?style=for-the-badge&logo=discord&logoColor=white)
 
+</div>
+
 <br>
 
 <!-- Top Button -->
@@ -142,10 +145,32 @@ Notion: [CHEERFUL ](https://www.notion.so/list-a/Cheerful-241638f9b91b8024aa31d5
 
 ## <span id="5">❓ 5. 라이브러리 사용 이유</span>
 
-각 라이브러리의 사용 이유를 설명해주세요.
+> Emotion 
+- 각 컴포넌트에 스타일이 캡슐화되어 전역스타일 충돌 방지 및 동적 props기반 스타일링 지원으로 상태에 따라 유연한 스타일 변경이 가능하여 사용.
+<br>
 
-> React
+> react-google-maps/api
+- 지도, 마커, 인포윈도우 등을 React컴포넌트처럼 관리가 가능하고 필요한 모듈만 불러오는 Tree Shaking지원으로 성능 최적화를 위해 사용.
+<br>
 
+> React-query 
+- 캐싱, 자동 리패칭등 데이터 관리 기능 내장 및 useQuery, useMutation 혹을 간단히 API 데이터 호출이 가능하여 사용.
+<br>
+
+> Axios
+- 직관적인 API, 요청/응답 인터셉터 지원으로 토큰 기반 인증 처리에 유용하여 사용.
+<br>
+
+> react-icons
+- FontAwesome, Materialicons등 통합 ICON 제공등 편의성을 위해 사용
+<br>
+
+> react-router
+- 중첩 라우트, 동적 라우트등 강력한 기능 및 선언형 라우팅으로 URL에 따라 컴포넌트를 직관적으로 매핑하기 위해 사용.
+<br>
+
+> zustand
+- 가볍고 직관적인 전역 상태 관리를 위해 사용.
 <br>
 
 <!-- Top Button -->
@@ -408,12 +433,108 @@ Notion: [CHEERFUL ](https://www.notion.so/list-a/Cheerful-241638f9b91b8024aa31d5
 ## <span id="9">✨ 9. 주요 코드</span>
 
 <details>
-<summary> 주요 코드에 대한 설명을 입력하세요. </summary>
+<summary> 커뮤니티 게시글 등록 </summary>
 
 <div>
-설명
+커뮤니티 글 등록 (게시글 + 이미지 업로드)을 위한 코드. 사용자가 커뮤니티에 글을 작성할 때 제목과 내용을 저장하고, 필요하다면 이미지도 업로드해서 함께 저장하는 서비스 로직
 
-```jsx
+```java
+/*
+  커뮤니티 글 등록 + 이미지 저장
+*/
+@Transactional(rollbackFor = Exception.class)
+public void register(CommunityRegisterReqDto dto) {
+
+    // 1) 사용자 식별
+    Integer userId = principalUtil.getPrincipalUser().getUser().getUserId();
+
+    // title 유효성 검사
+    if (dto.getTitle() == null || dto.getTitle().trim().isEmpty()) {
+        throw new IllegalArgumentException("제목이 없습니다.");
+    }
+
+    // content 유효성 검사
+    if (dto.getContent() == null || dto.getContent().trim().isEmpty()) {
+        throw new IllegalArgumentException("내용이 없습니다.");
+    }
+
+    // 2) 게시글 저장
+    Community community = Community.builder()
+            .userId(userId)
+            .communityCategoryId(dto.getCommunityCategoryId())
+            .title(dto.getTitle())
+            .content(dto.getContent())
+            .build();
+    communityMapper.insert(community);
+
+    // 3) 이미지 저장
+      List<MultipartFile> imageFiles = dto.getFiles();
+
+    if (imageFiles != null && !imageFiles.isEmpty()) {
+        List<CommunityImg> communityImgs = new ArrayList<>();
+        int seq = 1;
+
+        for(MultipartFile file : imageFiles) {
+            String imagePath = fileService.uploadFile(file, "community");
+
+            CommunityImg communityImg = CommunityImg.builder()
+                .communityId(community.getCommunityId())
+                .seq(seq++)
+                .imgPath(imagePath)
+                .build();
+
+            communityImgs.add(communityImg);
+        }
+
+        communityImgMapper.insertMany(communityImgs);
+    }
+}
+```
+
+</div>
+</details>
+
+<br>
+
+<details>
+<summary> 커뮤니티 게시글 내용보기 </summary>
+
+<div>
+특정 카테고리 내 특정 커뮤니티 게시글 상세 내용 조회 기능을 위한 코드
+
+```java
+/*
+  특정 글 클릭해서 내용 보기
+*/
+public Community getCommunityContent(Integer categoryId, Integer communityId) {
+    Integer userId = principalUtil.getPrincipalUser().getUser().getUserId();
+
+    // 게시글 단건 조회
+    Community community = communityMapper.findByOption(categoryId, communityId, userId);
+    if(community == null) {
+        throw new NotFoundException("Community not found with id = " + communityId);
+    }
+
+    // 이미지 URL 세팅
+    List<CommunityImg> imgs = community.getCommunityImgs();
+    if(imgs != null && !imgs.isEmpty()) {
+        imgs.sort(Comparator.comparingInt(CommunityImg::getSeq));
+        imgs.forEach(img -> img.setImgUrl(imageUrlUtil.community(img.getImgPath())));
+    }
+
+    // 댓글도 조회해서 세팅
+    List<CommunityComment> comments = communityCommentMapper.findAllByCommunityId(categoryId, communityId);
+
+    comments.forEach(c -> {
+        var u = c.getUser();
+        if(u != null) {
+            u.setProfileImgUrl(imageUrlUtil.profile(u.getProfileImgPath()));
+        }
+    });
+    community.setCommunityComments(comments);
+
+    return community;
+}
 
 ```
 
@@ -423,12 +544,114 @@ Notion: [CHEERFUL ](https://www.notion.so/list-a/Cheerful-241638f9b91b8024aa31d5
 <br>
 
 <details>
-<summary> 주요 코드에 대한 설명을 입력하세요. </summary>
+<summary> 지도(현재 위치 값 전달) </summary>
 
 <div>
-설명
+임의 입력값을 숫자좌표로 안전하게 변한 {lat, lng} 혹은 null로 반환
+카테고리가 변경될 시 categoryId를 문자열이 아닌 숫자로 변환 후 전달
 
 ```jsx
+const { category } = useParams();
+const mapRef = useRef(null);
+const centerRef = useRef({ lat: 35.1595454, lng: 129.0616078 });
+
+const [searchMap, setSearchMap] = useState({
+  lat: centerRef.current.lat,
+  lng: centerRef.current.lng,
+  radius: 3000,
+  categoryId: Number(category),
+});
+
+const [selected, setSelected] = useState(null);
+
+const toLatLng = (lat, lng) => {
+  const _lat = Number(lat);
+  const _lng = Number(lng);
+  return Number.isFinite(_lat) && Number.isFinite(_lng)
+    ? { lat: _lat, lng: _lng }
+    : null;
+};
+
+const [center, setCenter] = useState(null);
+
+useEffect(() => {
+  setSearchMap((prev) => ({
+    ...prev,
+    categoryId: Number(category),
+  }));
+}, [category]);
+```
+
+</div>
+</details>
+
+<br>
+
+<details>
+<summary> 관리자 - 게시글 수정(먹거리) </summary>
+
+<div>
+게시글(먹거리, 공지사항) 등 관리자가 작성한 게시글을 수정할 수 있는 기능을 위한 코드
+
+```java
+/*
+  food 글 수정
+*/
+public void modifyFood(FoodModifyReqDto dto) {
+
+    // title 유효성 검사
+    if (dto.getTitle() == null || dto.getTitle().trim().isEmpty()) {
+        throw new IllegalArgumentException("제목이 없습니다.");
+    }
+
+    // content 유효성 검사
+    if (dto.getContent() == null || dto.getContent().trim().isEmpty()) {
+        throw new IllegalArgumentException("내용이 없습니다.");
+    }
+
+    // price 유효성 검사
+    if (dto.getPrice() == null) {
+        throw new IllegalArgumentException("가격이 없습니다.");
+    }
+
+    // address 유효성 검사
+    if (dto.getFoodAddress() == null || dto.getFoodAddress().trim().isEmpty()) {
+        throw new IllegalArgumentException("주소가 없습니다.");
+    }
+
+    // file 유효성 검사
+    if (dto.getFiles().stream().anyMatch(MultipartFile::isEmpty)) {
+        throw new IllegalArgumentException("사진이 없습니다.");
+    }
+
+    // 글 수정
+    Food food = dto.toEntity();
+    foodMapper.update(food);
+
+    // 이미지 삭제
+    foodMapper.deleteFoodImages(food.getFoodId());
+    // 이미지 등록
+    List<MultipartFile> imageFiles = dto.getFiles();
+
+    if (imageFiles != null && !imageFiles.isEmpty()) {
+        List<FoodImg> foodImgs = new ArrayList<>();
+        int seq = 1;
+
+        for (MultipartFile file : imageFiles) {
+            String imagePath = fileService.uploadFile(file, "food");
+
+            FoodImg foodImg = FoodImg.builder()
+                    .foodId(food.getFoodId())
+                    .seq(seq++)
+                    .imgPath(imagePath)
+                    .build();
+
+            foodImgs.add(foodImg);
+        }
+
+        foodMapper.insertFoodImages(foodImgs);
+    }
+}
 
 ```
 
@@ -511,6 +734,8 @@ function DataTable({
 
 </div>
 </details>
+
+<br>
 
 <details>
 <summary> 이미지 URL 반환</summary>
