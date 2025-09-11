@@ -4,7 +4,7 @@
 
 <h1><b>똥꼬발랄 CHEERFUL</b></h1>
 
-🔗 [배포 링크](https://cheerfulpet.store)
+🔗 [배포 링크](http://cheerfulpet.store)
 
 <img src="cheerfulGif/cheerful_cover.png" alt="intro title image"/>
 
